@@ -10,10 +10,15 @@
 		33543FB01F0CD7520072DD33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33543FAF1F0CD7520072DD33 /* AppDelegate.swift */; };
 		33543FB41F0CD7520072DD33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33543FB31F0CD7520072DD33 /* ViewController.swift */; };
 		33543FB71F0CD7520072DD33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33543FB51F0CD7520072DD33 /* Main.storyboard */; };
-		33543FB91F0CD7520072DD33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33543FB81F0CD7520072DD33 /* Assets.xcassets */; };
 		33543FBC1F0CD7520072DD33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33543FBA1F0CD7520072DD33 /* LaunchScreen.storyboard */; };
 		33543FC41F0CD7C90072DD33 /* tron_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 33543FC31F0CD7C30072DD33 /* tron_grid.png */; };
 		33543FC61F0CDA060072DD33 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33543FC51F0CDA060072DD33 /* Plane.swift */; };
+		33543FC81F0CE0AA0072DD33 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33543FC71F0CE0AA0072DD33 /* Cube.swift */; };
+		33543FCA1F0CE0C70072DD33 /* PBRMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33543FC91F0CE0C70072DD33 /* PBRMaterial.swift */; };
+		33543FCC1F0CE0EF0072DD33 /* CollisionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33543FCB1F0CE0EF0072DD33 /* CollisionCategory.swift */; };
+		33543FCE1F0CE0FF0072DD33 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33543FCD1F0CE0FF0072DD33 /* Config.swift */; };
+		33543FD01F0CE1190072DD33 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33543FCF1F0CE1190072DD33 /* ConfigViewController.swift */; };
+		33614B911F0CEB7F0033B34F /* Assets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 33614B901F0CEB000033B34F /* Assets.scnassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +26,16 @@
 		33543FAF1F0CD7520072DD33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33543FB31F0CD7520072DD33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		33543FB61F0CD7520072DD33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		33543FB81F0CD7520072DD33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33543FBB1F0CD7520072DD33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33543FBD1F0CD7520072DD33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33543FC31F0CD7C30072DD33 /* tron_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tron_grid.png; sourceTree = "<group>"; };
 		33543FC51F0CDA060072DD33 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		33543FC71F0CE0AA0072DD33 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
+		33543FC91F0CE0C70072DD33 /* PBRMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBRMaterial.swift; sourceTree = "<group>"; };
+		33543FCB1F0CE0EF0072DD33 /* CollisionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionCategory.swift; sourceTree = "<group>"; };
+		33543FCD1F0CE0FF0072DD33 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		33543FCF1F0CE1190072DD33 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		33614B901F0CEB000033B34F /* Assets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Assets.scnassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +70,15 @@
 			children = (
 				33543FAF1F0CD7520072DD33 /* AppDelegate.swift */,
 				33543FB31F0CD7520072DD33 /* ViewController.swift */,
+				33543FCF1F0CE1190072DD33 /* ConfigViewController.swift */,
+				33543FCD1F0CE0FF0072DD33 /* Config.swift */,
+				33543FCB1F0CE0EF0072DD33 /* CollisionCategory.swift */,
+				33543FC91F0CE0C70072DD33 /* PBRMaterial.swift */,
+				33543FC71F0CE0AA0072DD33 /* Cube.swift */,
 				33543FC51F0CDA060072DD33 /* Plane.swift */,
 				33543FC31F0CD7C30072DD33 /* tron_grid.png */,
 				33543FB51F0CD7520072DD33 /* Main.storyboard */,
-				33543FB81F0CD7520072DD33 /* Assets.xcassets */,
+				33614B901F0CEB000033B34F /* Assets.scnassets */,
 				33543FBA1F0CD7520072DD33 /* LaunchScreen.storyboard */,
 				33543FBD1F0CD7520072DD33 /* Info.plist */,
 			);
@@ -128,9 +143,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33614B911F0CEB7F0033B34F /* Assets.scnassets in Resources */,
 				33543FC41F0CD7C90072DD33 /* tron_grid.png in Resources */,
 				33543FBC1F0CD7520072DD33 /* LaunchScreen.storyboard in Resources */,
-				33543FB91F0CD7520072DD33 /* Assets.xcassets in Resources */,
 				33543FB71F0CD7520072DD33 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +157,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33543FC81F0CE0AA0072DD33 /* Cube.swift in Sources */,
+				33543FCA1F0CE0C70072DD33 /* PBRMaterial.swift in Sources */,
+				33543FD01F0CE1190072DD33 /* ConfigViewController.swift in Sources */,
+				33543FCC1F0CE0EF0072DD33 /* CollisionCategory.swift in Sources */,
+				33543FCE1F0CE0FF0072DD33 /* Config.swift in Sources */,
 				33543FB41F0CD7520072DD33 /* ViewController.swift in Sources */,
 				33543FC61F0CDA060072DD33 /* Plane.swift in Sources */,
 				33543FB01F0CD7520072DD33 /* AppDelegate.swift in Sources */,

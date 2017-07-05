@@ -14,10 +14,10 @@ class Plane: SCNNode {
     var anchor: ARPlaneAnchor
     var planeGeometry: SCNBox
     
-    init(anchor: ARPlaneAnchor, isHidden hidden: Bool) {
+    init(anchor: ARPlaneAnchor, isHidden hidden: Bool, withMaterial material: SCNMaterial) {
         self.anchor = anchor
-        let width = CGFloat(self.anchor.extent.x)
-        let length = CGFloat(self.anchor.extent.z)
+        let width = CGFloat(anchor.extent.x)
+        let length = CGFloat(anchor.extent.z)
         
         // Using a SCNBox and not SCNPlane to make it easy for the geometry we add to the
         // scene to interact with the plane.
@@ -26,20 +26,14 @@ class Plane: SCNNode {
         // between the plane and the gometry we add to the scene
         let planeHeight: CGFloat = 0.01
         
-        self.planeGeometry = SCNBox(width: width, height: planeHeight, length: length, chamferRadius: 0)
+        planeGeometry = SCNBox(width: width, height: planeHeight, length: length, chamferRadius: 0)
         
         super.init()
-        
-        // Instead of just visualizing the grid as a gray plane, we will render
-        // it in some Tron style colours.
-        let material = SCNMaterial()
-        let image = UIImage(named: "tron_grid.png")
-        material.diffuse.contents = image
         
         // Since we are using a cube, we only want to render the tron grid
         // on the top face, make the other sides transparent
         let transparentMaterial = SCNMaterial()
-        transparentMaterial.diffuse.contents = UIColor(white: 1, alpha: 0)
+        transparentMaterial.diffuse.contents = UIColor(white: 1.0, alpha: 0.0)
         
         if hidden {
             self.planeGeometry.materials = [transparentMaterial, transparentMaterial, transparentMaterial, transparentMaterial, transparentMaterial, transparentMaterial]
@@ -63,6 +57,45 @@ class Plane: SCNNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func changeMaterial() {
+        // Static, all future cubes use this to have the same material
+        currentMaterialIndex = (currentMaterialIndex + 1) % 5
+        
+        var material = Plane.currentMaterial()
+        let transparentMaterial = SCNMaterial()
+        transparentMaterial.diffuse.contents = UIColor(white: 1.0, alpha: 0.0)
+        if material == nil {
+            material = transparentMaterial
+        }
+        let transform = self.planeGeometry.materials[4].diffuse.contentsTransform
+        material!.diffuse.contentsTransform = transform
+        material!.roughness.contentsTransform = transform
+        material!.metalness.contentsTransform = transform
+        material!.normal.contentsTransform = transform
+        self.planeGeometry.materials = [transparentMaterial, transparentMaterial, transparentMaterial, transparentMaterial, material!, transparentMaterial]
+    }
+    
+    class func currentMaterial() -> SCNMaterial? {
+        var materialName: String
+        switch currentMaterialIndex {
+        case 0:
+            materialName = "tron"
+        case 1:
+            materialName = "oakfloor2"
+        case 2:
+            materialName = "sculptedfloorboards"
+        case 3:
+            materialName = "granitesmooth"
+        case 4:
+            // planes will be transparent
+            return nil
+        default:
+            return nil
+        }
+        
+        return PBRMaterial.materialNamed(name: materialName)
+    }
+    
     func update(anchor: ARPlaneAnchor) {
         // As the user moves around the extend and location of the plane
         // may be updated. We need to update our 3D geometry to match the
@@ -82,22 +115,25 @@ class Plane: SCNNode {
     }
     
     func setTextureScale() {
-        let width = planeGeometry.width
-        let height = planeGeometry.length
+        let width = Float(planeGeometry.width)
+        let height = Float(planeGeometry.length)
         
         // As the width/height of the plane updates, we want our tron grid material to
         // cover the entire plane, repeating the texture over and over. Also if the
         // grid is less than 1 unit, we don't want to squash the texture to fit, so
         // scaling updates the texture co-ordinates to crop the texture in that case
         let material = planeGeometry.materials[4]
-        material.diffuse.contentsTransform = SCNMatrix4MakeScale(Float(width), Float(height), 1)
-        material.diffuse.wrapS = SCNWrapMode.repeat
-        material.diffuse.wrapT = SCNWrapMode.repeat
+        let scaleFactor:Float = 1
+        let m = SCNMatrix4MakeScale(width * scaleFactor, height * scaleFactor, 1)
+        material.diffuse.contentsTransform = m
+        material.roughness.contentsTransform = m
+        material.metalness.contentsTransform = m
+        material.normal.contentsTransform = m
     }
     
     func hide() {
         let transparentMaterial = SCNMaterial()
-        transparentMaterial.diffuse.contents = UIColor(white: 1, alpha: 0)
+        transparentMaterial.diffuse.contents = UIColor(white: 1.0, alpha: 0.0)
         self.planeGeometry.materials = [transparentMaterial, transparentMaterial, transparentMaterial, transparentMaterial, transparentMaterial, transparentMaterial]
     }
 }
