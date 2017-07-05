@@ -13,6 +13,7 @@
 		33543FB91F0CD7520072DD33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33543FB81F0CD7520072DD33 /* Assets.xcassets */; };
 		33543FBC1F0CD7520072DD33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33543FBA1F0CD7520072DD33 /* LaunchScreen.storyboard */; };
 		33543FC41F0CD7C90072DD33 /* tron_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 33543FC31F0CD7C30072DD33 /* tron_grid.png */; };
+		33543FC61F0CDA060072DD33 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33543FC51F0CDA060072DD33 /* Plane.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		33543FBB1F0CD7520072DD33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33543FBD1F0CD7520072DD33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33543FC31F0CD7C30072DD33 /* tron_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tron_grid.png; sourceTree = "<group>"; };
+		33543FC51F0CDA060072DD33 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				33543FAF1F0CD7520072DD33 /* AppDelegate.swift */,
 				33543FB31F0CD7520072DD33 /* ViewController.swift */,
+				33543FC51F0CDA060072DD33 /* Plane.swift */,
 				33543FC31F0CD7C30072DD33 /* tron_grid.png */,
 				33543FB51F0CD7520072DD33 /* Main.storyboard */,
 				33543FB81F0CD7520072DD33 /* Assets.xcassets */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33543FB41F0CD7520072DD33 /* ViewController.swift in Sources */,
+				33543FC61F0CDA060072DD33 /* Plane.swift in Sources */,
 				33543FB01F0CD7520072DD33 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +320,7 @@
 				33543FC21F0CD7520072DD33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
